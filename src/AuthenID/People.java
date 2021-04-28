@@ -6,11 +6,20 @@ public class People {
     char sex;
     int age;
     double weight;
+    String  phoneNum;
 
     public People(String name, String number, char sex) {
         this.name = name;
         this.number = number;
         this.sex = sex;
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     public String getName() {

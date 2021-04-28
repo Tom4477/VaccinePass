@@ -2,11 +2,11 @@ package StockControl;
 
 import java.util.ArrayList;
 
-public class VaccineStock {
+public class VaccineOperation {
 
     ArrayList<Vaccine> vaccines;
 
-    public VaccineStock()
+    public VaccineOperation()
     {
        vaccines=new ArrayList<>();
     }
@@ -17,14 +17,13 @@ public class VaccineStock {
         vaccines.add(instance);
     }
 
-    public Vaccine consumeVaccines(String vname,String vmanu,int vstage)
+    public Vaccine consumeVaccines(Vaccine vaccine)
     {
-        Vaccine instance=new Vaccine(vname,vmanu,vstage);
-        if (vaccines.contains(instance))
+       if (vaccines.contains(vaccine))
         {
-            vaccines.remove(instance);
+            vaccines.remove(vaccine);
         }
-        return instance;
+        return vaccine;
     }
 
     public Boolean queryVaccines(String vname,String vmanu,int vstage)
@@ -70,4 +69,12 @@ public class VaccineStock {
         return num;
     }
 
+    public void addBatch(String vname,String vmanu,int vstage,int num)
+    {
+        for (int i=0;i<num;i++)
+        {
+            Vaccine instance=new Vaccine(vname,vmanu,vstage);
+            vaccines.add(instance);
+        }
+    }
 }
