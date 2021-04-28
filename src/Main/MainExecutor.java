@@ -17,5 +17,12 @@ public class MainExecutor {
 
     public static void main(String[] args) {
 
+        //0.疫苗库存管理
+
+        //1.患者管理
+
+        //2.开具接种证明
+
+        //3.统计功能
     }
 }
