@@ -17,13 +17,18 @@ public class VaccineOperation {
         vaccines.add(instance);
     }
 
-    public Vaccine consumeVaccines(Vaccine vaccine)
+    public void consumeVaccines(Vaccine vaccine)
     {
        if (vaccines.contains(vaccine))
         {
             vaccines.remove(vaccine);
         }
-        return vaccine;
+       else
+       {
+           System.out.println("Not Enough vaccine");
+           return;
+       }
+
     }
 
     public Boolean queryVaccines(String vname,String vmanu,int vstage)
@@ -63,7 +68,6 @@ public class VaccineOperation {
            {
                num++;
            }
-
         }
 
         return num;

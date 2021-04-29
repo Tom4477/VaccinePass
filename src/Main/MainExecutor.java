@@ -1,4 +1,7 @@
 package Main;
+
+import java.util.Scanner;
+
 /*
 * 亲爱的学生们:
 对于您的最终项目，实施疫苗护照应用程序以使其更容易
@@ -17,6 +20,7 @@ public class MainExecutor {
 
     public static void main(String[] args) {
 
+        Scanner scanner=new Scanner(System.in);
         //0.疫苗库存管理
 
         //1.患者管理
