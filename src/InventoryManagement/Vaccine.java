@@ -1,4 +1,4 @@
-package StockControl;
+package InventoryManagement;
 
 public class Vaccine {
     private String name;

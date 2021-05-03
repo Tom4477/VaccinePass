@@ -1,13 +1,11 @@
 package AuthenID;
 
-import StockControl.Vaccine;
-import StockControl.VaccineOperation;
+import InventoryManagement.Vaccine;
+import InventoryManagement.VaccineOperation;
 
-import javax.sql.DataSource;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 import static Storage.instanceStore.wait_queue;
 import static Storage.instanceStore.render_queue;
@@ -35,6 +33,6 @@ public class patientManage {
         patient.upsertInoculateRecord(vaccine,simpleDateFormat.format(date));
         patient.setInoculate(true);
         render_queue.add(patient);
-
+        System.out.println("[Message from CDC] "+patient.getPersonInfo().getName()+" Inoculate successful!");
     }
 }

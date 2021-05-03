@@ -13,6 +13,7 @@ public class InonculateAuth {
     patientManage patientManage=new patientManage();
    public void render(People people)
     {
+        System.out.println("\n######################################Inonculate Authentication start###########################");
         String Detail="";
         boolean flag=false;
         ArrayList<Patient> tmp=render_queue;
@@ -42,6 +43,6 @@ public class InonculateAuth {
         {
             System.out.println(people.getName()+" "+people.getNumber()+"\nHave not been vaccinated");
         }
-
+        System.out.println("###############################################Authentication End#############################\n");
     }
 }

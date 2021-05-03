@@ -1,6 +1,6 @@
 package AuthenID;
 
-import StockControl.Vaccine;
+import InventoryManagement.Vaccine;
 
 import java.util.HashMap;
 
@@ -63,7 +63,6 @@ public class Patient {
             InoculateRecord.put(vaccine,timeStamp);
         }
 
-        System.out.println(getPersonInfo().getName()+" Inoculate successful!");
     }
 
     @Override

@@ -1,7 +1,7 @@
 package VaccineAuth;
 
 import AuthenID.*;
-import StockControl.Vaccine;
+import InventoryManagement.Vaccine;
 
 public class AuthenTest {
 

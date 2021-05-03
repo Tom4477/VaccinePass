@@ -1,7 +1,7 @@
 package Storage;
 
 import AuthenID.Patient;
-import StockControl.Vaccine;
+import InventoryManagement.Vaccine;
 
 import java.util.ArrayList;
 

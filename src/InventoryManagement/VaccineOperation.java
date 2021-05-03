@@ -1,4 +1,4 @@
-package StockControl;
+package InventoryManagement;
 
 import java.util.ArrayList;
 
