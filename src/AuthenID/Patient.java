@@ -8,7 +8,8 @@ public class Patient {
     People personInfo;
     String PatientNo;
     Boolean isInoculate;
-    HashMap<Vaccine,String> InoculateRecord;
+
+    HashMap<Patient,HashMap<Vaccine,String>> InoculateRecord;
 
     public Patient(People personInfo, Boolean isInoculate) {
         this.personInfo = personInfo;
@@ -40,11 +41,16 @@ public class Patient {
         isInoculate = inoculate;
     }
 
-    public HashMap<Vaccine, String> getInoculateRecord() {
+    public HashMap<Patient, HashMap<Vaccine, String>> getInoculateRecord() {
         return InoculateRecord;
     }
 
-    public void setInoculateRecord(HashMap<Vaccine, String> inoculateRecord) {
+    public void setInoculateRecord(HashMap<Patient, HashMap<Vaccine, String>> inoculateRecord) {
         InoculateRecord = inoculateRecord;
+    }
+
+    @Override
+    public String toString() {
+        return personInfo.getName();
     }
 }

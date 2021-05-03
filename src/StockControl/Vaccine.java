@@ -47,11 +47,6 @@ public class Vaccine {
 
     @Override
     public String toString() {
-        return "VaccineInfo{" +
-                "name='" + name + '\'' +
-                ", manufacture='" + manufacture + '\'' +
-                ", stage=" + stage +
-                ", instruct='" + instruct + '\'' +
-                '}';
+        return "Vaccine name is "+name+" and manufacture is "+manufacture+" and stage is "+stage+"\n"+"TimeStamp";
     }
 }

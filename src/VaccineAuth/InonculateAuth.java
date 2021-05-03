@@ -11,7 +11,7 @@ public class InonculateAuth {
     patientManage patientManage=new patientManage();
    public void render(People people)
     {
-        String timestamp="";
+        String Detail="";
         boolean flag=false;
         ArrayList<Patient> tmp=patientManage.render_queue;
         int len=tmp.size();
@@ -23,7 +23,7 @@ public class InonculateAuth {
             if(vaccineNum==IDnum)
             {
                flag=true;
-               timestamp=tmp.get(i).getInoculateRecord().toString();
+               Detail=tmp.get(i).getInoculateRecord().get(tmp.get(i)).toString();
                 break;
             }else
             {
@@ -33,7 +33,7 @@ public class InonculateAuth {
 
         if(flag)
         {
-            System.out.println(people.getName()+" "+people.getNumber()+"\nHave been vaccinated"+timestamp);
+            System.out.println(people.getName()+" "+people.getNumber()+"\nHave been vaccinated"+Detail);
         }
         else
         {
