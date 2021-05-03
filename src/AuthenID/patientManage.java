@@ -30,13 +30,9 @@ public class patientManage {
 
     public void inocute(Patient patient, Vaccine vaccine)
     {
-  //      patient.getInoculateRecord().put(vaccine,System.currentTimeMillis()+"");
         Date date= new Date(System.currentTimeMillis());
-         HashMap vctime= new HashMap<Vaccine,String>();
-       vctime.put(vaccine,simpleDateFormat.format(date));
 
-        patient.upsertInoculateRecord(patient,vctime);
-   //     vaccineOperation.consumeVaccines(vaccine);
+        patient.upsertInoculateRecord(vaccine,simpleDateFormat.format(date));
         patient.setInoculate(true);
         render_queue.add(patient);
 

@@ -9,7 +9,7 @@ public class Patient {
    private String PatientNo;
    private Boolean isInoculate;
 
-   private HashMap<Patient,HashMap<Vaccine,String>> InoculateRecord;
+   private HashMap<Vaccine,String> InoculateRecord;
 
     public Patient(People personInfo) {
         this.personInfo = personInfo;
@@ -46,24 +46,24 @@ public class Patient {
         isInoculate = inoculate;
     }
 
-    public HashMap<Patient, HashMap<Vaccine, String>> getInoculateRecord() {
+    public HashMap<Vaccine, String> getInoculateRecord() {
         return InoculateRecord;
     }
 
-    public void setInoculateRecord(HashMap<Patient, HashMap<Vaccine, String>> inoculateRecord) {
+    public void setInoculateRecord(HashMap<Vaccine, String> inoculateRecord) {
         InoculateRecord = inoculateRecord;
     }
-    public void upsertInoculateRecord(Patient patient, HashMap<Vaccine, String> map) {
+    public void upsertInoculateRecord(Vaccine vaccine, String timeStamp) {
         if(InoculateRecord==null) {
             InoculateRecord = new HashMap<>();
-            InoculateRecord.put(patient, map);
+            InoculateRecord.put(vaccine,timeStamp);
         }
         else
         {
-            InoculateRecord.put(patient,map);
+            InoculateRecord.put(vaccine,timeStamp);
         }
 
-        System.out.println(patient.getPersonInfo().getName()+" Inoculate successful!");
+        System.out.println(getPersonInfo().getName()+" Inoculate successful!");
     }
 
     @Override
