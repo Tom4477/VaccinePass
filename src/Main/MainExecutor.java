@@ -1,5 +1,9 @@
 package Main;
 
+import InventoryManagement.Vaccine;
+import InventoryManagement.VaccineExec;
+import VaccineAuth.authenExec;
+
 import java.util.Scanner;
 
 /*
@@ -19,14 +23,28 @@ import java.util.Scanner;
 public class MainExecutor {
 
     public static void main(String[] args) {
+        int state = 0;
+        authenExec authenexec = new authenExec();
+        VaccineExec vaccineExec=new VaccineExec();
 
-        Scanner scanner=new Scanner(System.in);
-        //0.疫苗库存管理
+        System.out.println("Please select [Vaccine Inventory Management (0), Inonculate Authentication(1)]:");
 
-        //1.患者管理
+        Scanner scanner = new Scanner(System.in);
+        state = scanner.nextInt();
 
-        //2.开具接种证明
+        switch (state) {
+            case 0:
+                //Vaccine Inventory Management
+                vaccineExec.daemon();
+                break;
+            case 1:
+                //Inonculate Authentication
+                authenexec.daemon();
+                break;
+            default:
+                break;
+        }
 
-        //3.统计功能
+
     }
 }

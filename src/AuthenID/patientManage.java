@@ -12,7 +12,7 @@ import static Storage.instanceStore.render_queue;
 
 public class patientManage {
     VaccineFactory vaccineFactory;
-    SimpleDateFormat simpleDateFormat=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+
 
     public patientManage() {
         wait_queue = new ArrayList<>();
@@ -28,11 +28,16 @@ public class patientManage {
 
     public void inocute(Patient patient, Vaccine vaccine)
     {
-        Date date= new Date(System.currentTimeMillis());
-
-        patient.upsertInoculateRecord(vaccine,simpleDateFormat.format(date));
+        patient.upsertInoculateRecord(vaccine,genNowDateStamp());
         patient.setInoculate(true);
+        vaccineFactory.consumeVaccines(vaccine.getName(),vaccine.getManufacture(),vaccine.getStage());
         render_queue.add(patient);
         System.out.println("[Message from CDC] "+patient.getPersonInfo().getName()+" Inoculate successful!");
+    }
+    public String genNowDateStamp()
+    {
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+        Date date= new Date(System.currentTimeMillis());
+        return simpleDateFormat.format(date);
     }
 }
