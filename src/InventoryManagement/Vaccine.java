@@ -4,13 +4,26 @@ public class Vaccine {
     private String name;
     private String manufacture;
     private int stage;
-    private String uniqueNo;
+    private String vaccineSerNum;
     private String instruct;
+    private int amount;
 
     public Vaccine(String name, String manufacture, int stage) {
-        this.name = name;
-        this.manufacture = manufacture;
-        this.stage = stage;
+        this.name=name;
+        this.manufacture=manufacture;
+        this.stage=stage;
+    }
+
+    public Vaccine(String vaccineSerNum) {
+        this.vaccineSerNum = vaccineSerNum;
+    }
+
+    public String getVaccineSerNum() {
+        return vaccineSerNum;
+    }
+
+    public void setVaccineSerNum(String vaccineSerNum) {
+        this.vaccineSerNum = vaccineSerNum;
     }
 
     public String getName() {
@@ -45,8 +58,22 @@ public class Vaccine {
         this.instruct = instruct;
     }
 
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount += amount;
+    }
+
+    public void addAmount()
+    {
+        this.amount++;
+    }
+
+
     @Override
     public String toString() {
-        return "\nVaccine name is "+name+" , manufacture is "+manufacture+" , stage is "+stage+" , "+"TimeStamp";
+        return "\nVaccine name is "+name+" , manufacture is "+manufacture+" , stage is "+stage+"\n";
     }
 }

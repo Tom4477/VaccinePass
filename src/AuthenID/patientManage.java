@@ -1,7 +1,7 @@
 package AuthenID;
 
 import InventoryManagement.Vaccine;
-import InventoryManagement.VaccineOperation;
+import InventoryManagement.VaccineFactory;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,13 +11,13 @@ import static Storage.instanceStore.wait_queue;
 import static Storage.instanceStore.render_queue;
 
 public class patientManage {
-    VaccineOperation vaccineOperation;
+    VaccineFactory vaccineFactory;
     SimpleDateFormat simpleDateFormat=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 
     public patientManage() {
         wait_queue = new ArrayList<>();
         render_queue= new ArrayList<>();
-        vaccineOperation=new VaccineOperation();
+        vaccineFactory=new VaccineFactory();
     }
 
     public void addPatient(People person)
