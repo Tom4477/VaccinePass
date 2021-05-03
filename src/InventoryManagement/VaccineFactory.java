@@ -1,94 +1,73 @@
 package InventoryManagement;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
-import static Storage.instanceStore.vaccineList;
+import static Storage.instanceStore.vaccines;
 
 public class VaccineFactory {
 
     public VaccineFactory()
     {
-       vaccineList= new HashMap<>();
+     vaccines=new ArrayList<>();
     }
 
     public void addVaccines(String vname,String vmanu,int vstage)
     {
-        Vaccine instance=new Vaccine(vname,vmanu,vstage);
-
-        if(vaccineList.keySet().contains(instance))
-        {
-            int amt=vaccineList.get(instance);
-            vaccineList.replace(instance,amt+1);
-        }
-        else
-            vaccineList.put(instance,1);
+        vaccines.add(new Vaccine(vname,vmanu,vstage));
     }
 
-    public void consumeVaccines(Vaccine vaccine)
+    public void consumeVaccines(String vname,String vmanu,int vstage)
     {
-       if (vaccineList.keySet().contains(vaccine))
-        {
-            int amt=vaccineList.get(vaccine);
-            vaccineList.replace(vaccine,amt-1);
-        }
-       else
-       {
-           System.out.println("Not Enough vaccine");
-          // return;
-       }
+     for(Vaccine inst:vaccines)
+     {
+         if(inst.getName().equals(vname)&&inst.getManufacture().equals(vmanu)&&inst.getStage()==vstage)
+         {
+             vaccines.remove(inst);
+             break;
+         }
+     }
 
     }
 
     public Boolean queryVaccines(String vname,String vmanu,int vstage)
     {
-        Vaccine instance=new Vaccine(vname,vmanu,vstage);
-//        if()
-//        {
-//            return true;
-//        }
+        for(Vaccine inst:vaccines)
+        {
+            if(inst.getName().equals(vname)&&inst.getManufacture().equals(vmanu)&&inst.getStage()==vstage)
+            {
+               return true;
+            }
+        }
         return false;
     }
 
-    public void ListAllVaccine()
-    {
-//        int len=vaccines.size();
-//        System.out.println("+++++++++++All Vaccine List+++++++++++");
-//        for(int i=0;i<len;i++)
-//        {
-//            System.out.println("+++++++++++New  Vaccine+++++++++++");
-//            Vaccine tmp=vaccines.get(i);
-//            System.out.println(tmp.toString());
-//        }
-    }
     public int getNumberVacc()
     {
-      //  return vaccines.size();
-        return 0;
+        return vaccines.size();
     }
 
     public int countByVnameStage(String  vname,int stage)
     {
-//        int num=0;
-//        int len=vaccines.size();
-//        for(int i=0;i<len;i++)
-//        {
-//            Vaccine tmp=vaccines.get(i);
-//           if((vname.equalsIgnoreCase(tmp.getName()))&&(tmp.getStage()==stage))
-//           {
-//               num++;
-//           }
-//        }
-//
-//        return num;
-        return 0;
+        int num=0;
+        for(Vaccine vac:vaccines)
+        {
+           if((vname.equalsIgnoreCase(vac.getName()))&&(vac.getStage()==stage))
+           {
+               num++;
+           }
+        }
+
+        return num;
     }
 
     public void addBatch(String vname,String vmanu,int vstage,int num)
     {
-//        for (int i=0;i<num;i++)
-////        {
-////            Vaccine instance=new Vaccine(vname,vmanu,vstage);
-////            vaccines.add(instance);
-////        }
+        for (int i=0;i<num;i++)
+        {
+            vaccines.add(new Vaccine(vname,vmanu,vstage));
+        }
     }
 }
