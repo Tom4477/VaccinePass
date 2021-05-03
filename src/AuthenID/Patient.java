@@ -5,24 +5,29 @@ import StockControl.Vaccine;
 import java.util.HashMap;
 
 public class Patient {
-    People personInfo;
-    String PatientNo;
-    Boolean isInoculate;
+   private People personInfo;
+   private String PatientNo;
+   private Boolean isInoculate;
 
-    HashMap<Patient,HashMap<Vaccine,String>> InoculateRecord;
+   private HashMap<Patient,HashMap<Vaccine,String>> InoculateRecord;
 
-    public Patient(People personInfo, Boolean isInoculate) {
+    public Patient(People personInfo) {
         this.personInfo = personInfo;
-        this.isInoculate = isInoculate;
+        init();
     }
 
+    private void init()
+    {
+        setPatientNo();
+        setInoculate(false);
+    }
 
     public String getPatientNo() {
         return PatientNo;
     }
 
-    public void setPatientNo(String patientNo) {
-        PatientNo = patientNo;
+    public void setPatientNo() {
+        PatientNo = personInfo.getNumber();
     }
 
     public People getPersonInfo() {
@@ -48,9 +53,31 @@ public class Patient {
     public void setInoculateRecord(HashMap<Patient, HashMap<Vaccine, String>> inoculateRecord) {
         InoculateRecord = inoculateRecord;
     }
+    public void upsertInoculateRecord(Patient patient, HashMap<Vaccine, String> map) {
+        if(InoculateRecord==null) {
+            InoculateRecord = new HashMap<>();
+            InoculateRecord.put(patient, map);
+        }
+        else
+        {
+            InoculateRecord.put(patient,map);
+        }
+
+        System.out.println(patient.getPersonInfo().getName()+" Inoculate successful!");
+    }
 
     @Override
     public String toString() {
         return personInfo.getName();
+    }
+
+    public String showInoculateInfo()
+    {
+        if(InoculateRecord!=null)
+        {
+            return InoculateRecord.toString();
+        }
+
+        return "";
     }
 }

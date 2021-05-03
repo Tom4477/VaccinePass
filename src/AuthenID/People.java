@@ -1,12 +1,13 @@
 package AuthenID;
 
 public class People {
-    String name;
-    String number;
-    char sex;
-    int age;
-    double weight;
-    String  phoneNum;
+  private   String name;
+   private String number;
+   private char sex;
+    private int age;
+   private double weight;
+   private String  phoneNum;
+   private String address;
 
     public People(String name, String number, char sex) {
         this.name = name;
@@ -62,6 +63,14 @@ public class People {
         this.weight = weight;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "People{" +
@@ -70,6 +79,8 @@ public class People {
                 ", sex=" + sex +
                 ", age=" + age +
                 ", weight=" + weight +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

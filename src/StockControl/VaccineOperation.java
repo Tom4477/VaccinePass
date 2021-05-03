@@ -2,9 +2,9 @@ package StockControl;
 
 import java.util.ArrayList;
 
-public class VaccineOperation {
+import static Storage.instanceStore.vaccines;
 
-    ArrayList<Vaccine> vaccines;
+public class VaccineOperation {
 
     public VaccineOperation()
     {

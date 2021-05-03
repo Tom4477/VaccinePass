@@ -6,6 +6,8 @@ import AuthenID.patientManage;
 
 import java.util.ArrayList;
 
+import static Storage.instanceStore.render_queue;
+
 public class InonculateAuth {
 
     patientManage patientManage=new patientManage();
@@ -13,7 +15,7 @@ public class InonculateAuth {
     {
         String Detail="";
         boolean flag=false;
-        ArrayList<Patient> tmp=patientManage.render_queue;
+        ArrayList<Patient> tmp=render_queue;
         int len=tmp.size();
         String IDnum=people.getNumber();
         //query from render Array
@@ -23,7 +25,8 @@ public class InonculateAuth {
             if(vaccineNum==IDnum)
             {
                flag=true;
-               Detail=tmp.get(i).getInoculateRecord().get(tmp.get(i)).toString();
+              // Detail=tmp.get(i).getInoculateRecord().get(tmp.get(i)).toString();
+                Detail=tmp.get(i).showInoculateInfo();
                 break;
             }else
             {

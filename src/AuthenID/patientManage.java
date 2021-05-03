@@ -9,11 +9,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import static Storage.instanceStore.wait_queue;
+import static Storage.instanceStore.render_queue;
+
 public class patientManage {
     VaccineOperation vaccineOperation;
-    ArrayList<Patient> wait_queue;
-  public  ArrayList<Patient> render_queue;
-  SimpleDateFormat simpleDateFormat=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+    SimpleDateFormat simpleDateFormat=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 
     public patientManage() {
         wait_queue = new ArrayList<>();
@@ -23,8 +24,7 @@ public class patientManage {
 
     public void addPatient(People person)
     {
-       Patient tmp=new Patient(person,false);
-       tmp.setPatientNo(person.number+person.name);
+       Patient tmp=new Patient(person);
        wait_queue.add(tmp);
     }
 
@@ -34,9 +34,8 @@ public class patientManage {
         Date date= new Date(System.currentTimeMillis());
          HashMap vctime= new HashMap<Vaccine,String>();
        vctime.put(vaccine,simpleDateFormat.format(date));
-       HashMap<Patient,HashMap<Vaccine,String>> vcinfo=new HashMap<>();
-       vcinfo.put(patient,vctime);
-        patient.setInoculateRecord(vcinfo);
+
+        patient.upsertInoculateRecord(patient,vctime);
    //     vaccineOperation.consumeVaccines(vaccine);
         patient.setInoculate(true);
         render_queue.add(patient);
