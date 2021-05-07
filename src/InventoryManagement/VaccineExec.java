@@ -6,7 +6,7 @@ public class VaccineExec {
 
     VaccineFactory vaccineFactory=new VaccineFactory();
 
-    public void daemon()
+    public void daemon()  daemon是什么
     {
         System.out.println("Vaccine Inventory Management");
         Scanner scanner = new Scanner(System.in);
@@ -24,6 +24,7 @@ public class VaccineExec {
 
                 vaccineFactory.addVaccines(vName,vManu, Integer.parseInt(vStage));
                 System.out.println("[System Notice] "+vName+"/"+vStage+" added sucessfully!");
+                “/”具体是什么意思
             }
             else if(state.equals("2"))
             {
@@ -33,7 +34,8 @@ public class VaccineExec {
                 String vManu = scanner.nextLine();
                 System.out.println("please  input the vStage(1 or 2)：[Press Enter to continue]");
                 String vStage = scanner.nextLine();
-
+scanner 在这里的用法
+    
                 Boolean ifexist= vaccineFactory.queryVaccines(vName,vManu, Integer.parseInt(vStage));
                 System.out.println("[System Notice] "+vName+"/"+vStage+" is "+ifexist);
             }
