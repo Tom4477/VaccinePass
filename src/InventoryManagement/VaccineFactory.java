@@ -29,7 +29,7 @@ public class VaccineFactory {
              break;
          }
      }
-
+&& 什么意思
     }
 
     public Boolean queryVaccines(String vname,String vmanu,int vstage)
@@ -43,7 +43,10 @@ public class VaccineFactory {
         }
         return false;
     }
-
+    
+vstage 怎么处理
+解释一下这三个片段    
+    
     public int getNumberVacc()
     {
         return vaccines.size();
@@ -62,6 +65,7 @@ public class VaccineFactory {
 
         return num;
     }
+    )&&什么意思
 
     public void addBatch(String vname,String vmanu,int vstage,int num)
     {
