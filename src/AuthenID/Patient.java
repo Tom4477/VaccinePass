@@ -53,6 +53,7 @@ public class Patient {
     public void setInoculateRecord(HashMap<Vaccine, String> inoculateRecord) {
         InoculateRecord = inoculateRecord;
     }
+小于号 什么意思
     public void upsertInoculateRecord(Vaccine vaccine, String timeStamp) {
         if(InoculateRecord==null) {
             InoculateRecord = new HashMap<>();
@@ -69,7 +70,7 @@ public class Patient {
     public String toString() {
         return personInfo.getName();
     }
-
+tostring 为什么
     public String showInoculateInfo()
     {
         if(InoculateRecord!=null)
@@ -78,5 +79,7 @@ public class Patient {
         }
 
         return "";
+解释一下这段代码
+return的这个是什么
     }
 }
