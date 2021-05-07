@@ -11,7 +11,7 @@ public class TestVaccineFactory {
         vaccineFactory.addVaccines("WuHan","WuSheng",1);
         vaccineFactory.addVaccines("WuHan","WuSheng",1);
         vaccineFactory.addVaccines("WuHan","WuSheng",1);
-
+怎么调整一下
         System.out.println(vaccineFactory.getNumberVacc());
 
         //consume one vaccine
