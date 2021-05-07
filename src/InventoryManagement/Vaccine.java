@@ -68,12 +68,12 @@ public class Vaccine {
 
     public void addAmount()
     {
-        this.amount++;
+        this.amount++;  +1的操作 
     }
 
 
     @Override
     public String toString() {
-        return "\nVaccine name is "+name+" , manufacture is "+manufacture+" , stage is "+stage+"\n";
+        return "\nVaccine name is "+name+" , manufacture is "+manufacture+" , stage is "+stage+"\n";           换行
     }
 }
