@@ -42,8 +42,6 @@ public class VaccineExec {
                 System.out.println("[System Notice] "+vName+" has "+count);
             }
 
-
-
         scanner.close();
     }
 }
