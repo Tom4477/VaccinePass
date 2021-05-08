@@ -29,7 +29,9 @@ public class VaccineFactory {
              break;
          }
      }
-
+        
+&& 什么意思？与的意思 a and b   代表的什么意思？都能对上 match
+    
     }
 
     public Boolean queryVaccines(String vname,String vmanu)
@@ -43,11 +45,15 @@ public class VaccineFactory {
         }
         return false;
     }
-
+    
+vstage 怎么处理
+解释一下这三个片段    
+    
     public int getNumberVacc()
     {
         return vaccines.size();
     }
+    用来统计 统计所有疫苗；有一个盘点疫苗的
 
     public int countByVname(String  vname)
     {
@@ -62,10 +68,11 @@ public class VaccineFactory {
 
         return num;
     }
+    )&&什么意思
 
     public void addBatch(String vname,String vmanu,int num)
     {
-        for (int i=0;i<num;i++)
+        for (int i=0;i<num;i++)   控制循环的条件：从0开始计算一直计数到num，循环维持的条件；循环变的条件  表示方向，动作 变化的条件
         {
             vaccines.add(new Vaccine(vname,vmanu));
         }

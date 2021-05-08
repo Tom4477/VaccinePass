@@ -14,4 +14,5 @@ public class instanceStore {
     public static volatile ArrayList<Patient> wait_queue;
     public  static volatile ArrayList<Patient> render_queue;
 
+    用法解释
 }
