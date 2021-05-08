@@ -19,11 +19,9 @@ public class VaccineExec {
                 String vName = scanner.nextLine();
                 System.out.println("please  input the vManu：[Press Enter to continue]");
                 String vManu = scanner.nextLine();
-                System.out.println("please  input the vStage(1 or 2)：[Press Enter to continue]");
-                String vStage = scanner.nextLine();
 
-                vaccineFactory.addVaccines(vName,vManu, Integer.parseInt(vStage));
-                System.out.println("[System Notice] "+vName+"/"+vStage+" added sucessfully!");
+                vaccineFactory.addVaccines(vName,vManu);
+                System.out.println("[System Notice] "+vName+" added sucessfully!");
             }
             else if(state.equals("2"))
             {
@@ -31,22 +29,17 @@ public class VaccineExec {
                 String vName = scanner.nextLine();
                 System.out.println("please  input the vManu：[Press Enter to continue]");
                 String vManu = scanner.nextLine();
-                System.out.println("please  input the vStage(1 or 2)：[Press Enter to continue]");
-                String vStage = scanner.nextLine();
 
-                Boolean ifexist= vaccineFactory.queryVaccines(vName,vManu, Integer.parseInt(vStage));
-                System.out.println("[System Notice] "+vName+"/"+vStage+" is "+ifexist);
+                Boolean ifexist= vaccineFactory.queryVaccines(vName,vManu);
+                System.out.println("[System Notice] "+vName+" is "+ifexist);
             }
             else if(state.equals("3"))
             {
                 System.out.println("please input the vName：[Press Enter to continue]");
                 String vName = scanner.nextLine();
 
-                System.out.println("please  input the vStage(1 or 2)：[Press Enter to continue]");
-                String vStage = scanner.nextLine();
-
-                int count=vaccineFactory.countByVnameStage(vName,Integer.parseInt(vStage));
-                System.out.println("[System Notice] "+vName+"/"+vStage+" has "+count);
+                int count=vaccineFactory.countByVname(vName);
+                System.out.println("[System Notice] "+vName+" has "+count);
             }
 
 

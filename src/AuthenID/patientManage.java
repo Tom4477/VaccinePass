@@ -30,7 +30,7 @@ public class patientManage {
     {
         patient.upsertInoculateRecord(vaccine,genNowDateStamp());
         patient.setInoculate(true);
-        vaccineFactory.consumeVaccines(vaccine.getName(),vaccine.getManufacture(),vaccine.getStage());
+        vaccineFactory.consumeVaccines(vaccine.getName(),vaccine.getManufacture());
         render_queue.add(patient);
         System.out.println("[Message from CDC] "+patient.getPersonInfo().getName()+" Inoculate successful!");
     }

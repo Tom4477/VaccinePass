@@ -20,7 +20,7 @@ public class authenExec {
 
         People newInstance = new People(userName, idNum, gd.charAt(0));
 
-        inonculateAuth.render(newInstance);
+        inonculateAuth.runAuthenticate(newInstance);
 
     }
 

@@ -3,15 +3,12 @@ package InventoryManagement;
 public class Vaccine {
     private String name;
     private String manufacture;
-    private int stage;
     private String vaccineSerNum;
     private String instruct;
-    private int amount;
 
-    public Vaccine(String name, String manufacture, int stage) {
+    public Vaccine(String name, String manufacture) {
         this.name=name;
         this.manufacture=manufacture;
-        this.stage=stage;
     }
 
     public Vaccine(String vaccineSerNum) {
@@ -42,14 +39,6 @@ public class Vaccine {
         this.manufacture = manufacture;
     }
 
-    public int getStage() {
-        return stage;
-    }
-
-    public void setStage(int stage) {
-        this.stage = stage;
-    }
-
     public String getInstruct() {
         return instruct;
     }
@@ -58,22 +47,10 @@ public class Vaccine {
         this.instruct = instruct;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount += amount;
-    }
-
-    public void addAmount()
-    {
-        this.amount++;
-    }
 
 
     @Override
     public String toString() {
-        return "\nVaccine name is "+name+" , manufacture is "+manufacture+" , stage is "+stage+"\n";
+        return "\nVaccine name is "+name+" , manufacture is "+manufacture;
     }
 }
